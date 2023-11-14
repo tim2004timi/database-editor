@@ -100,7 +100,7 @@ class MainWindow(ParentWindow):
         # Гифка
         self.image_label = ImageLabel(master=self)
         self.image_label.place(x=79, y=375)
-        self.image_label.load('g.gif')
+        self.image_label.load('images/g.gif')
 
         # SQL запрос
         self.query_button = CTk.CTkButton(master=self, text="SQL запрос", width=200, command=self.query)
@@ -119,10 +119,10 @@ class MainWindow(ParentWindow):
         ax.axis('off')
         ax.axis('tight')
         ax.table(cellText=df.values, colLabels=df.columns, loc='center')
-        savefig('table.png')
+        savefig('images/table.png')
 
         self.canvas = tkinter.Canvas(master=self.tab_2, width=665, height=530)
-        self.image = Image.open("table.png")
+        self.image = Image.open("images/table.png")
         self.image = self.image.resize((667, 532))
         self.photo = ImageTk.PhotoImage(self.image)
         self.canvas.create_image(0, 0, anchor='nw', image=self.photo)
